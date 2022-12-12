@@ -1,0 +1,756 @@
+<style>
+  /*----BANNER---*/
+  .home-birmingham {
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    min-height: 600px;
+  }
+
+  /*Fixes--------*/
+  body.linear [id='whitebox'] th,
+  body.linear [id='wrapper'] h1,
+  body.linear [id='wrapper'] .uk-h1,
+  body.linear [id='wrapper'] h2,
+  body.linear [id='wrapper'] .uk-h2,
+  body.linear [id='wrapper'] h3,
+  body.linear [id='wrapper'] .uk-h3,
+  body.linear [id='wrapper'] h4,
+  body.linear [id='wrapper'] .uk-h4,
+  body.linear [id='wrapper'] h5,
+  body.linear [id='wrapper'] .uk-h5,
+  body.linear [id='wrapper'] h6,
+  body.linear [id='wrapper'] .uk-h6 {
+    font-family: 'proxima-nova', Arial, Helvetica, sans-serif !important;
+  }
+
+  body.hd #maincolumn-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.hd #content {
+    width: 100% !important;
+  }
+
+  body.linear #whitebox {
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  /*Fixes End--------*/
+
+  :root {
+    --clr-1: #1d6d47;
+    --clr-2: #7bba01;
+    --clr-3: #ebc510;
+    --clr-4: #eb9e10;
+    --clr-5: #f3fbec;
+  }
+
+  /* ------------------------ */
+  /* REUSEABLES START *
+/* ------------------------ */
+  .r-container {
+    max-width: 140rem !important;
+    margin: 0 auto !important;
+  }
+
+  /* ------------------------ */
+  /* REUSEABLES END *
+/* ------------------------ */
+
+  header {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header .bg__video-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(30, 107, 82, 0.5);
+  }
+
+  header .bg__video-container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(30, 107, 82, 0.8);
+    width: 100%;
+    height: 100%;
+  }
+
+  .bg__video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .header__content {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 4rem 8rem;
+  }
+
+  .header__content h2 {
+    color: white !important;
+  }
+
+  .header__content h3 {
+    color: white !important;
+  }
+
+  .header__content h4 {
+    color: white !important;
+  }
+
+  .header__content h1 {
+    color: white !important;
+  }
+
+  /* ------------------------ */
+  /* SECTION LEARNING START *
+/* ------------------------ */
+  .steps,
+  .learn {
+    padding: 2rem 6rem;
+  }
+
+  .spotlight .r-container,
+  .steps .r-container,
+  .learn .r-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .learn .r-container figure {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .learn .r-container figure img {
+    --min-size: 30rem;
+    --max-size: 30rem;
+    width: clamp(var(--min-size), 50vw, var(--max-size));
+    height: clamp(var(--min-size), 50vw, var(--max-size));
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .learn .r-container article h2 {
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .learn .r-container article p {
+    margin-bottom: 2rem;
+  }
+
+  .learn .r-container article a {
+    text-transform: uppercase;
+    color: var(--clr-1);
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .learn .r-container article a span {
+    color: #fff;
+    fill: #fff;
+    background-color: var(--clr-1);
+    --size: 2rem;
+    width: var(--size);
+    height: var(--size);
+    text-align: center;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ------------------------ */
+  /* SECTION LEARNING END *
+/* ------------------------ */
+
+  /* ------------------------ */
+  /* SECTION STEPS START *
+/* ------------------------ */
+
+  .steps h2 {
+    color: var(--clr-1);
+    margin-bottom: 3rem;
+  }
+
+  .steps p {
+    margin-bottom: 1.8rem;
+  }
+
+  .steps p a {
+    text-decoration: underline;
+  }
+
+  .steps q {
+    display: block;
+    background-color: #e4e4e4;
+    padding: 2rem;
+    line-height: 1.5;
+    border-left: 0.6rem solid var(--clr-2);
+    margin-bottom: 2rem;
+  }
+
+  .steps article > a {
+    border: 1px solid;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+  }
+
+  .steps figure {
+    margin-bottom: 2rem;
+  }
+
+  .steps h3 {
+    margin-top: 0 !important;
+    color: var(--clr-1);
+  }
+
+  .steps h3 strong {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    display: block;
+  }
+
+  .steps figure img {
+    object-fit: cover;
+  }
+
+  /* ------------------------ */
+  /* SECTION STEPS END *
+/* ------------------------ */
+
+  /* ------------------------ */
+  /* SECTION SPOTLIGHT START *
+/* ------------------------ */
+  .spotlight {
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
+
+  .spotlight .r-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .spotlight h2 {
+    text-align: center;
+    color: var(--clr-1);
+    margin-bottom: 6rem;
+    position: relative;
+  }
+
+  .spotlight h2::after {
+    content: '';
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5rem;
+    height: 1rem;
+    background-color: red;
+  }
+
+  .spotlight figure {
+    text-align: center;
+  }
+
+  .spotlight figure img.main-img {
+    object-fit: cover;
+    --min-size: 10rem;
+    --max-size: 20rem;
+    width: clamp(var(--min-size), 20vw, var(--max-size));
+  }
+
+  .spotlight article {
+    transform: translateY(-6%);
+    padding-right: 4rem;
+    display: grid;
+  }
+
+  .spotlight article .point-container {
+    display: inline-grid;
+    grid-template-columns: 1fr 20rem;
+    grid-gap: 6rem;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .spotlight article .point-container:nth-child(1) {
+    transform: translateY(25%);
+  }
+
+  .spotlight article .point-container:nth-child(2) {
+    transform: translateY(-25%);
+  }
+
+  .spotlight article .point-container:nth-child(3) {
+    transform: translateY(-75%);
+  }
+
+  .spotlight article .point-container:nth-child(4) {
+    transform: translateY(-100%);
+  }
+
+  .spotlight article .point-container .circle {
+    width: 100%;
+    position: relative;
+  }
+
+  .spotlight article .circle div {
+    --size: 2rem;
+    width: var(--circleSize);
+    height: var(--circleSize);
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+
+  .spotlight article .xl-circle div {
+    --circleSize: calc(var(--size) * 8);
+  }
+
+  .spotlight article .lg-circle div {
+    --circleSize: calc(var(--size) * 6);
+  }
+
+  .spotlight article .md-circle div {
+    --circleSize: calc(var(--size) * 3);
+  }
+
+  .spotlight article .sm-circle div {
+    --circleSize: calc(var(--size) * 1);
+  }
+
+  .spotlight article .circle div .progress-bar,
+  .spotlight article .circle div .percent {
+    position: absolute;
+    top: 50%;
+  }
+
+  .spotlight article .circle div .percent {
+    right: 0%;
+    transform: translateY(-50%);
+  }
+
+  .circle div .progress-bar {
+    z-index: -1;
+    transform: translateY(-50%);
+    left: 50%;
+    height: 0.2rem;
+    width: 40%;
+  }
+
+  .spotlight article .xl-circle div,
+  .point-container:nth-child(1) .progress-bar {
+    background-color: var(--clr-1);
+  }
+
+  .spotlight article .lg-circle div,
+  .point-container:nth-child(2) .progress-bar {
+    background-color: var(--clr-2);
+  }
+
+  .spotlight article .md-circle div,
+  .point-container:nth-child(3) .progress-bar {
+    background-color: var(--clr-3);
+  }
+
+  .spotlight article .sm-circle div,
+  .point-container:nth-child(4) .progress-bar {
+    background-color: var(--clr-4);
+  }
+
+  .spotlight article .circle p {
+    grid-column: 2 / -1;
+  }
+
+  /* ------------------------ */
+  /* SECTION SPOTLIGHT END *
+/* ------------------------ */
+
+  /* ------------------------ */
+  /* SECTION ANNUAL START *
+/* ------------------------ */
+  .annual {
+    background-color: var(--clr-5);
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .annual h2 {
+    font-size: 5rem;
+    color: var(--clr-1);
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .annual p {
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .annual a {
+    color: var(--clr-1);
+  }
+
+  .annual a:first-child {
+    background-color: #fff;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5rem;
+  }
+
+  /* ------------------------ */
+  /* SECTION ANNUAL END *
+/* ------------------------ */
+
+  @media only screen and (max-width: 1280px) {
+    html {
+      font-size: 56.25%;
+      /* NOW 1rem = 9px  */
+    }
+  }
+
+  @media only screen and (max-width: 1030px) {
+    html {
+      font-size: 50%;
+      /* NOW 1rem = 8px  */
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .header__content h4 {
+      margin-bottom: 4rem;
+    }
+
+    .header__content h1 {
+      font-size: 5rem;
+    }
+
+    .spotlight .r-container,
+    .steps .r-container,
+    .learn .r-container {
+      grid-template-columns: 1fr;
+    }
+
+    .steps h3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .spotlight {
+      margin-bottom: 0;
+    }
+
+    .spotlight h2 {
+      font-size: 5.5rem;
+    }
+
+    .spotlight figure img.main-img {
+      width: 100%;
+      max-height: 40vh;
+    }
+
+    .spotlight article {
+      transform: translateX(-8%) translateY(-10%);
+    }
+
+    .spotlight article .point-container {
+      grid-template-columns: 1fr 25rem;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    html {
+      font-size: 43.75%;
+      /* NOW 1rem = 7px  */
+    }
+
+    .spotlight article {
+      padding-right: 0;
+      transform: translateX(-5%) translateY(-10%);
+    }
+
+    .circle div .progress-bar {
+      display: none;
+    }
+
+    .spotlight article .circle div .percent {
+      right: initial;
+      left: 50%;
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 700;
+      transform: translate(-50%, -50%);
+    }
+
+    .spotlight .point-container:first-child .circle div .percent {
+      transform: translate(-50%, -100%);
+    }
+
+    .spotlight .point-container:last-child .circle div .percent {
+      transform: translate(-50%, 100%);
+      color: #000;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .learn {
+      text-align: center;
+    }
+
+    .learn .r-container article a {
+      justify-content: center;
+    }
+
+    .steps h2 {
+      text-align: center;
+    }
+
+    .spotlight h2 {
+      font-size: 4.5rem;
+    }
+
+    .annual h2 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .spotlight article {
+      grid-gap: 4rem;
+    }
+
+    .spotlight article .point-container {
+      grid-template-columns: 1fr;
+      font-size: 2rem;
+      text-align: center;
+      grid-gap: 4rem;
+    }
+
+    .spotlight article .point-container:nth-child(1),
+    .spotlight article .point-container:nth-child(2),
+    .spotlight article .point-container:nth-child(3),
+    .spotlight article .point-container:nth-child(4),
+    .spotlight article {
+      transform: none;
+    }
+
+    .spotlight .point-container:first-child .circle div .percent {
+      transform: translate(-50%, -50%);
+    }
+
+    .learn .r-container article a span {
+      --size: 5rem;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    html {
+      font-size: 37.5%;
+      /* NOW 1rem = 6px  */
+    }
+
+    .learn .r-container figure img {
+      --min-size: 40rem;
+      --max-size: 40rem;
+    }
+  }
+</style>
+<header>
+  <div class="bg__video-container">
+    <video autoplay="autoplay" loop="loop" muted="muted">
+      <source
+        src="https://uab.box.com/shared/static/g7gxluobczcj8b2pncps004ehx1773ck.mp4"
+        type="video/mp4"
+      />
+      Your Browser isn't supported
+    </video>
+  </div>
+  <div class="header__content">
+    <h2>2022</h2>
+    <h3>ANNUAL REPORT</h3>
+    <h4>August 1, 2021 - July 31, 2022</h4>
+    <h1>
+      <strong
+        >Technology solutions that streamline processes can help save
+        money, time and resources</strong
+      >
+    </h1>
+    <h3>
+      <a href="https://www.youtube.com/watch?v=WbxwviC68jw"
+        >Watch the Video</a
+      >
+    </h3>
+  </div>
+</header>
+<div class="learn">
+  <div class="r-container">
+    <figure data-wf-figure="1">
+      <img
+        src="images/2022/annual-report/DrCarver-AnnualReport-2022.png"
+        alt="Dr Carver image"
+        width="615"
+        height="559"
+      />
+    </figure>
+    <article>
+      <h2>Champions of Excellence</h2>
+      <p>
+        An automated form; a fast pass to technology tool approval; a
+        streamlined hiring process.<br />Through a series of
+        innovations and improvements, UAB IT’s partners across campus
+        have<br />realized savings of time and money —giving them
+        resources to spend on strategic projects<br />rather than
+        paper processes. In one example, UAB IT’s applications and
+        consulting services<br />team created a new form to reduce ONE
+        Card processing times. “We’ve had several users<br />tell us
+        how much they love it, and how easy it is to use,”/p&gt;
+        <a href="#">Read the full story <span> </span> </a>
+      </p>
+    </article>
+  </div>
+</div>
+<div
+  class="home-birmingham"
+  style="
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ),
+      url('https://dl.kraken.io/web/f49498ca8c5bdc1bc0a31169c8303117/JamieWitter-AnnualReport2022.jpg');
+  "
+>
+  <div class="text-container">
+    <div class="header">Training tomorrow’s medical trailblazers</div>
+    <div class="sub-header">
+      Whether you’re a medical student, resident, or fellow, our
+      programs are focused on delivering exceptional, hands-on patient
+      care training and cutting-edge research opportunities.
+    </div>
+    <a href="/medicine/home/education" class="small-white-button"
+      >Learn more about medical education</a
+    >
+  </div>
+</div>
+<div class="steps">
+  <div class="r-container">
+    <article>
+      <h2>Big impact, one win at a time</h2>
+      <p>
+        An automated form; a fast pass to technology tool approval; a
+        streamlined hiring process.<br />Through a series of
+        innovations and improvements, UAB IT’s partners across campus
+        have<br />realized savings of time and money —giving them
+        resources to spend on strategic projects<br />rather than
+        paper processes. In one example, UAB IT’s applications and
+        consulting services<br />team created a new form to reduce ONE
+        Card processing times. “We’ve had several users<br />tell us
+        how much they love it, and how easy it is to use,”
+      </p>
+    </article>
+    <article>
+      <figure data-wf-figure="1">
+        <img
+          src="images/2022/annual-report/BenardBraxton-AnnualReport2022.min.png"
+          alt="person image"
+          width="600"
+          height="722"
+        />
+      </figure>
+      <h3>
+        <strong>1500</strong> Visits With <br />
+        Technology Partners
+      </h3>
+    </article>
+  </div>
+</div>
+<div class="spotlight">
+  <h2>UAB Steps into the Spotlight</h2>
+  <div class="r-container">
+    <figure data-wf-figure="1">
+      <img
+        src="images/2022/annual-report/ReggieHill-AnnualReport-2022.png"
+        alt="ReggieHill AnnualReport 2022"
+        width="613"
+        height="559"
+        class="main-img"
+      />
+    </figure>
+    <article>
+      <div class="point-container">
+        <div class="circle xl-circle">
+          <div>
+            <span class="progress-bar"></span>
+            <span class="percent">75%</span>
+          </div>
+        </div>
+        <p>
+          Women with a <i>BRCA1</i> or <i>BRCA2</i> mutation have up
+          to a 75% lifetime risk of breast cancer.
+        </p>
+      </div>
+      <div class="point-container">
+        <div class="circle lg-circle">
+          <div>
+            <span class="progress-bar"></span>
+            <span class="percent">50%</span>
+          </div>
+        </div>
+        <p>
+          Women with a <i>BRCA1</i> mutation have up to a 50% lifetime
+          risk of ovarian cancer.
+        </p>
+      </div>
+      <div class="point-container">
+        <div class="circle md-circle">
+          <div>
+            <span class="progress-bar"></span>
+            <span class="percent">25%</span>
+          </div>
+        </div>
+        <p>
+          Men with a <i>BRCA2</i> mutation have up to a 25% lifetime
+          risk of aggressive prostate cancer.
+        </p>
+      </div>
+      <div class="point-container">
+        <div class="circle sm-circle">
+          <div>
+            <span class="progress-bar"></span>
+            <span class="percent">5%</span>
+          </div>
+        </div>
+        <p>
+          Men and women with a <i>BRCA2</i> mutation have up to a 5%
+          lifetime risk of pancreatic cancer.
+        </p>
+      </div>
+    </article>
+  </div>
+</div>
+<div class="annual">
+  <h2><strong>Read the Annual Report</strong></h2>
+  <p>Read about the people and programs powering Technology</p>
+  <div>
+    <a href="#">View the interactive report</a>
+    <a href="#">Download PDF</a>
+  </div>
+</div>
